@@ -74,7 +74,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.7.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -384,17 +384,17 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/06/test/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/07/solve-P4083/" itemprop="url">
             
-              <span itemprop="name">test</span>
+              <span itemprop="name">题解 P4803 【[CCO 2015]太阳能飞行】</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-06T23:44:16+08:00" content="2019-08-06">
-          08-06
+        <time class="post-time" itemprop="dateCreated" datetime="2019-08-07T00:17:17+08:00" content="2019-08-07">
+          08-07
         </time>
       </div>
 
@@ -419,16 +419,16 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/08/06/hello-world/" itemprop="url">
+          <a class="post-title-link" href="/2019/08/06/test/" itemprop="url">
             
-              <span itemprop="name">Hello World</span>
+              <span itemprop="name">test</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-06T23:23:13+08:00" content="2019-08-06">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-08-06T23:44:16+08:00" content="2019-08-06">
           08-06
         </time>
       </div>
@@ -503,7 +503,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -518,7 +520,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -537,7 +541,7 @@
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                Links
+                友链
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -575,6 +579,11 @@
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
       
 
     </div>
@@ -625,11 +634,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -799,8 +803,186 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
   
+
+
+    <script>
+
+        !function () {
+
+            function n(n, e, t) {
+
+                return n.getAttribute(e) || t
+
+            }
+
+            function e(n) {
+
+                return document.getElementsByTagName(n)
+
+            }
+
+            function t() {
+
+                var t = e("script"), o = t.length, i = t[o - 1];
+
+                return {
+
+                    l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99)
+
+                }
+
+            }
+
+            function o() {
+
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+
+                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+            }
+
+            function i() {
+
+                r.clearRect(0, 0, a, c);
+
+                var n, e, t, o, m, l;
+
+                s.forEach(function (i, x) {
+
+                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
+
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+
+                }),
+
+                    x(i)
+
+            }
+
+            var a, c, u, m = document.createElement("canvas"),
+
+                d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
+
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+
+                    function (n) {
+
+                        window.setTimeout(n, 1e3 / 45)
+
+                    },
+
+                w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+
+                    window.onmousemove = function (n) {
+
+                        n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+                    },
+
+                    window.onmouseout = function () {
+
+                        y.x = null, y.y = null
+
+                    };
+
+            for (var s = [], f = 0; d.n > f; f++) {
+
+                var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+
+            }
+
+            u = s.concat([y]),
+
+                setTimeout(function () { i() }, 100)
+
+        }();
+
+    </script>
+
+
 
 </body>
 </html>
