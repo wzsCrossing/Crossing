@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="神仙题一道 $\Large\mathcal{Description}$无耻地丢一个链接 $\Large{☞}$ $\Large{戳这里}$ 题目内容严重超出我的表达范围 $\Large\mathcal{Solution}$首先，有这样一个结论 $:$$$\boxed {k为奇数时，x \times 2^y,mod,k,成环 \ k为偶数且x所含因子2的个数比k多时，x \times 2^y,mod">
+<meta name="keywords" content="线段树,倍增">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解 「LibreOJ NOI Round 1」北校门外的回忆">
+<meta property="og:url" content="http://yoursite.com/2019/10/05/solve-loj510/index.html">
+<meta property="og:site_name" content="Crossing&#39;s blog">
+<meta property="og:description" content="神仙题一道 $\Large\mathcal{Description}$无耻地丢一个链接 $\Large{☞}$ $\Large{戳这里}$ 题目内容严重超出我的表达范围 $\Large\mathcal{Solution}$首先，有这样一个结论 $:$$$\boxed {k为奇数时，x \times 2^y,mod,k,成环 \ k为偶数且x所含因子2的个数比k多时，x \times 2^y,mod">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-05T03:33:47.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="题解 「LibreOJ NOI Round 1」北校门外的回忆">
+<meta name="twitter:description" content="神仙题一道 $\Large\mathcal{Description}$无耻地丢一个链接 $\Large{☞}$ $\Large{戳这里}$ 题目内容严重超出我的表达范围 $\Large\mathcal{Solution}$首先，有这样一个结论 $:$$$\boxed {k为奇数时，x \times 2^y,mod,k,成环 \ k为偶数且x所含因子2的个数比k多时，x \times 2^y,mod">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/05/solve-loj510/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>题解 「LibreOJ NOI Round 1」北校门外的回忆 | Crossing's blog</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d8ee09635d0a5223d932b1e33168a7da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Crossing's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">越是接近 $\\$ 理想的未来就越可能到来吧</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/solve-loj510/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crossing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crossing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">题解 「LibreOJ NOI Round 1」北校门外的回忆
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-05 11:27:52 / 修改时间：11:33:47" itemprop="dateCreated datePublished" datetime="2019-10-05T11:27:52+08:00">2019-10-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/Loj/" itemprop="url" rel="index"><span itemprop="name">Loj</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>神仙题一道</p>
+<h1 id="Large-mathcal-Description"><a href="#Large-mathcal-Description" class="headerlink" title="$\Large\mathcal{Description}$"></a>$\Large\mathcal{Description}$</h1><p><del>无耻地</del>丢一个链接 $\Large{☞}$ <a href="https://loj.ac/problem/510" target="_blank" rel="noopener">$\Large{戳这里}$</a></p>
+<p><del>题目内容严重超出我的表达范围</del></p>
+<h1 id="Large-mathcal-Solution"><a href="#Large-mathcal-Solution" class="headerlink" title="$\Large\mathcal{Solution}$"></a>$\Large\mathcal{Solution}$</h1><p>首先，有这样一个结论 $:$<br>$$<br>\boxed {k为奇数时，x \times 2^y,mod,k,成环 \ k为偶数且x所含因子2的个数比k多时，x \times 2^y,mod,k,成环}<br>$$<br>归纳一下就是，<strong>$x$ 所含因子 $2$ 的个数比 $k$ 多(或相等)时，$x \times 2^y,mod,k$ 成环</strong>。($k$ 为奇数时，所含因子 $2$ 的个数为 $0$) 相关证明会在最后给出。</p>
+<p>所以，$1-n$ 每一个数都只有两种状态 $:$ 在一条链上 $or$ 不在链上</p>
+<p>我们可以找出每一条链，并对这些链进行维护(线段树或者树状数组)。而对于不在链上的点，可以暴力跳到链上，每次最多跳 $O(log_{2}n)$ 次。</p>
+<p>这就是本题的大体思路。</p>
+<p>但这还没完。</p>
+<p>我们注意到 $n$ 有 $1e9$ ，这显然不能直接维护 <del>时间、空间两开($bao$)花($zha$)</del></p>
+<p>但可以发现由于是链，所以一条链可以由一个数确定。于是我们可以倍增预处理出每个点所在的链，之后用动态开点线段树对链进行维护。</p>
+<p>完美！时间、空间两开花！</p>
+<h1 id="Large-mathcal-Code"><a href="#Large-mathcal-Code" class="headerlink" title="$\Large\mathcal{Code}$"></a>$\Large\mathcal{Code}$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tp &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>; ch = getchar()) f ^= ch == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; ch = getchar()) x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">    x = f ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, q, k;</span><br><span class="line"><span class="keyword">int</span> up[N], to[N][<span class="number">20</span>], upt[N][<span class="number">20</span>], len[N], p[N], num[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;      \\预处理</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; ++i) p[i] = log2(i &amp; (-i));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] || p[i] &lt; p[k]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>, tot = <span class="number">0</span>;</span><br><span class="line">        num[++cnt] = i, vis[i] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> x = (i &lt;&lt; <span class="number">1</span>); </span><br><span class="line">        <span class="keyword">if</span> (x &gt;= k) ++tot, x -= k;</span><br><span class="line">        <span class="keyword">while</span> (x != i) &#123;</span><br><span class="line">            num[++cnt] = x, vis[x] = <span class="literal">true</span>;</span><br><span class="line">            x &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (x &gt;= k) ++tot, x -= k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt; ++j) &#123;</span><br><span class="line">            up[num[j]] = tot, len[num[j]] = cnt;</span><br><span class="line">            <span class="keyword">int</span> y = (j + cnt - <span class="number">2</span>) % cnt + <span class="number">1</span>;</span><br><span class="line">            to[num[j]][<span class="number">0</span>] = num[y], upt[num[j]][<span class="number">0</span>] = (num[y] * <span class="number">2</span> &gt;= k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="number">20</span>; ++j)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= cnt; ++l) &#123;</span><br><span class="line">                to[num[l]][j] = to[to[num[l]][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">                upt[num[l]][j] = upt[num[l]][j - <span class="number">1</span>] + upt[to[num[l]][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!(x % k)) x /= k;</span><br><span class="line">    <span class="keyword">return</span> x % k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbitv</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!(x % k)) x /= k, ++tot;</span><br><span class="line">    x %= k;</span><br><span class="line">    <span class="keyword">while</span> (tot--) x *= k;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dis;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Find_Head</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;    \\找链首</span><br><span class="line">    <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!(x % k)) x /= k, ++tot;</span><br><span class="line">    <span class="keyword">int</span> head = x % k, cnt = (x - head) / k; dis = <span class="number">1</span>;</span><br><span class="line">    dis += (cnt / up[head]) * len[head], cnt %= up[head];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">19</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (upt[head][i] &gt; cnt) <span class="keyword">continue</span>;</span><br><span class="line">        cnt -= upt[head][i];</span><br><span class="line">        dis += (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        head = to[head][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (tot--) head *= k;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> ls, rs, val;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segment_Tree</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> rt = <span class="number">0</span>, siz = <span class="number">0</span>;</span><br><span class="line">    node tre[N &lt;&lt; <span class="number">5</span>];</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> &amp;p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!p) p = ++siz;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= l &amp;&amp; r &lt;= y) &#123;</span><br><span class="line">            tre[p].val ^= v;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= mid) update(tre[p].ls, l, mid, x, y, v);</span><br><span class="line">        <span class="keyword">if</span> (y &gt; mid) update(tre[p].rs, mid + <span class="number">1</span>, r, x, y, v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!p) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (l == r) <span class="keyword">return</span> tre[p].val;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= mid) <span class="keyword">return</span> query(tre[p].ls, l, mid, x) ^ tre[p].val;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> query(tre[p].rs, mid + <span class="number">1</span>, r, x) ^ tre[p].val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Segment_Tree T1, T2, T3; <span class="comment">//T1 : 非链  T2 : 链  T3 : 链头</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(q), read(k);</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span> (q--) &#123;</span><br><span class="line">        <span class="keyword">int</span> opt, x, v;</span><br><span class="line">        read(opt), read(x);</span><br><span class="line">        <span class="keyword">if</span> (opt == <span class="number">1</span>) &#123;</span><br><span class="line">            read(v);</span><br><span class="line">            <span class="keyword">while</span> (x &lt;= n &amp;&amp; p[lowbit(x)] &lt; p[k]) &#123;</span><br><span class="line">                T1.update(T1.rt, <span class="number">1</span>, n, x, x, v);</span><br><span class="line">                x += lowbitv(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (x &gt; n) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> head = Find_Head(x);</span><br><span class="line">            T2.rt = T3.query(T3.rt, <span class="number">1</span>, n, head);</span><br><span class="line">            <span class="keyword">int</span> tmp = T2.rt; </span><br><span class="line">            T2.update(T2.rt, <span class="number">1</span>, n, dis, n, v);</span><br><span class="line">            <span class="keyword">if</span> (!tmp) T3.update(T3.rt, <span class="number">1</span>, n, head, head, T2.rt);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (x) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p[lowbit(x)] &lt; p[k]) ans ^= T1.query(T1.rt, <span class="number">1</span>, n, x);</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> head = Find_Head(x);</span><br><span class="line">                    T2.rt = T3.query(T3.rt, <span class="number">1</span>, n, head);</span><br><span class="line">                    <span class="keyword">if</span> (T2.rt) ans ^= T2.query(T2.rt, <span class="number">1</span>, n, dis);</span><br><span class="line">                &#125;</span><br><span class="line">                x -= lowbitv(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Large-mathcal-Extended"><a href="#Large-mathcal-Extended" class="headerlink" title="$\Large\mathcal{Extended}$"></a>$\Large\mathcal{Extended}$</h1><p>结论 $:$ $x$ 所含因子 $2$ 的个数比 $k$ 多(或相等)时，$x \times 2^y,mod,k$ 成环</p>
+<p>因为 $x$ 的变化只与最后一个非零位的数值有关。所以这里讨论的 $x$ 取值为 $1 \le x \le k - 1$。</p>
+<p>$x + lowbitv(x)$ 相当于 $x \times 2$，每一次运算 $x$ 的因子 $2$ 的个数都会多一，其他不变，所以该位不会变成零 (不会变成 $k$ 的倍数)。</p>
+<p>有根据欧拉定理 $a^{\phi(p)}$ $\equiv$ $1$ ($mod,p$)，所以值成环。</p>
+<p>证毕。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/线段树/" rel="tag"><i class="fa fa-tag"></i> 线段树</a>
+          
+            <a href="/tags/倍增/" rel="tag"><i class="fa fa-tag"></i> 倍增</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/03/solve-Comet-OJ-3940/" rel="next" title="题解 Comet-OJ-3980 【字符串】">
+                <i class="fa fa-chevron-left"></i> 题解 Comet-OJ-3980 【字符串】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/6.jpg" alt="Crossing">
+            
+              <p class="site-author-name" itemprop="name">Crossing</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hehezhou.github.io/" title="https://hehezhou.github.io/" rel="noopener" target="_blank">hehezhou</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://Dilemma-CMZ.github.io/" title="https://Dilemma-CMZ.github.io/" rel="noopener" target="_blank">Dilemma</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sunQyuni.github.io/" title="https://sunQyuni.github.io/" rel="noopener" target="_blank">SYQ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://LMOliver.github.io/" title="https://LMOliver.github.io/" rel="noopener" target="_blank">LMOliver</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://orzsiyuan.com/" title="http://orzsiyuan.com/" rel="noopener" target="_blank">Siyuan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zhxry.github.io/" title="https://zhxry.github.io/" rel="noopener" target="_blank">Karnage</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://oierlin.cf/" title="https://oierlin.cf/" rel="noopener" target="_blank">oierlin</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Description"><span class="nav-number">1.</span> <span class="nav-text">$\Large\mathcal{Description}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Solution"><span class="nav-number">2.</span> <span class="nav-text">$\Large\mathcal{Solution}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Code"><span class="nav-number">3.</span> <span class="nav-text">$\Large\mathcal{Code}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Extended"><span class="nav-number">4.</span> <span class="nav-text">$\Large\mathcal{Extended}$</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crossing</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+
+    <script>
+
+        !function () {
+
+            function n(n, e, t) {
+
+                return n.getAttribute(e) || t
+
+            }
+
+            function e(n) {
+
+                return document.getElementsByTagName(n)
+
+            }
+
+            function t() {
+
+                var t = e("script"), o = t.length, i = t[o - 1];
+
+                return {
+
+                    l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99)
+
+                }
+
+            }
+
+            function o() {
+
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+
+                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+            }
+
+            function i() {
+
+                r.clearRect(0, 0, a, c);
+
+                var n, e, t, o, m, l;
+
+                s.forEach(function (i, x) {
+
+                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
+
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+
+                }),
+
+                    x(i)
+
+            }
+
+            var a, c, u, m = document.createElement("canvas"),
+
+                d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
+
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+
+                    function (n) {
+
+                        window.setTimeout(n, 1e3 / 45)
+
+                    },
+
+                w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+
+                    window.onmousemove = function (n) {
+
+                        n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+                    },
+
+                    window.onmouseout = function () {
+
+                        y.x = null, y.y = null
+
+                    };
+
+            for (var s = [], f = 0; d.n > f; f++) {
+
+                var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+
+            }
+
+            u = s.concat([y]),
+
+                setTimeout(function () { i() }, 100)
+
+        }();
+
+    </script>
+
+
+
+</body>
+</html>
