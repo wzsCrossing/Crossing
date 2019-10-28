@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Crossing&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="$\Large\mathcal{Problem}$$\qquad$ 给定一个 $a$ 数组，问在 $[l, r]$ 范围内，有多少个 $k$ 满足 $\sum\limits_{i=1}^n a_i \times x_i = k$ 存在非负整数解。 $\Large\mathcal{Solution}$$\qquad$ 在 $l, r$ 比较小的情况下，我们可以用完全背包来实现。 $\qquad$ 但">
+<meta name="keywords" content="同余最短路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「学习笔记」同余最短路">
+<meta property="og:url" content="http://yoursite.com/2019/10/28/note-同余最短路/index.html">
 <meta property="og:site_name" content="Crossing&#39;s blog">
+<meta property="og:description" content="$\Large\mathcal{Problem}$$\qquad$ 给定一个 $a$ 数组，问在 $[l, r]$ 范围内，有多少个 $k$ 满足 $\sum\limits_{i=1}^n a_i \times x_i = k$ 存在非负整数解。 $\Large\mathcal{Solution}$$\qquad$ 在 $l, r$ 比较小的情况下，我们可以用完全背包来实现。 $\qquad$ 但">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-28T07:49:57.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Crossing&#39;s blog">
+<meta name="twitter:title" content="「学习笔记」同余最短路">
+<meta name="twitter:description" content="$\Large\mathcal{Problem}$$\qquad$ 给定一个 $a$ 数组，问在 $[l, r]$ 范围内，有多少个 $k$ 满足 $\sum\limits_{i=1}^n a_i \times x_i = k$ 存在非负整数解。 $\Large\mathcal{Solution}$$\qquad$ 在 $l, r$ 比较小的情况下，我们可以用完全背包来实现。 $\qquad$ 但">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/28/note-同余最短路/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>归档 | Crossing's blog</title>
+  <title>「学习笔记」同余最短路 | Crossing's blog</title>
   
 
 
@@ -177,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,7 +292,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -375,426 +380,219 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/28/note-同余最短路/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crossing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/10/27/9Azh4o3VkSyL5Fp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Crossing's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">「学习笔记」同余最短路
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-28 14:24:40 / 修改时间：15:49:57" itemprop="dateCreated datePublished" datetime="2019-10-28T14:24:40+08:00">2019-10-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/28/note-同余最短路/" itemprop="url">
+          
             
-              <span itemprop="name">「学习笔记」同余最短路</span>
-            
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-28T14:24:40+08:00" content="2019-10-28">
-          10-28
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/25/XJOI-Contest1271/" itemprop="url">
-            
-              <span itemprop="name">XJ模拟赛20</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-25T18:51:59+08:00" content="2019-10-25">
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h1 id="Large-mathcal-Problem"><a href="#Large-mathcal-Problem" class="headerlink" title="$\Large\mathcal{Problem}$"></a>$\Large\mathcal{Problem}$</h1><p>$\qquad$ 给定一个 $a$ 数组，问在 $[l, r]$ 范围内，有多少个 $k$ 满足 $\sum\limits_{i=1}^n a_i \times x_i = k$ 存在非负整数解。</p>
+<h1 id="Large-mathcal-Solution"><a href="#Large-mathcal-Solution" class="headerlink" title="$\Large\mathcal{Solution}$"></a>$\Large\mathcal{Solution}$</h1><p>$\qquad$ 在 $l, r$ 比较小的情况下，我们可以用完全背包来实现。</p>
+<p>$\qquad$ 但在 $l, r$ 超出 $int$ 范围时，即使用 $bitset$ 优化后的完全背包也难以通过。</p>
+<p>$\qquad$ 这时候就要用上我们的主角 $–$ <strong>同余最短路</strong></p>
+<h1 id="Large-texttt-实现"><a href="#Large-texttt-实现" class="headerlink" title="$\Large\texttt{实现}$"></a>$\Large\texttt{实现}$</h1><p>$\qquad$ 我们令 $Base$ 为某一个 $a_i$。</p>
+<p>$\qquad$ $f_i$ 表示满足条件且 $mod$ $Base$ $=$ $i$ 的最小的数</p>
+<p>$\qquad$ 那么 $k$ 满足条件当且仅当 $k \ge f_{k - \lfloor \frac{k}{Base} \rfloor \times Base}$</p>
+<p>$\qquad$ 建边的话就对于 $i \in [0, Base - 1]$ 向 $(i + a_j)$ $mod$ $Base$ 连一条长度为 $a_j$ 的边。</p>
+<p>$\qquad$ (可以发现，边数的多少是依托于点数的多少的，因此 $Base$ 选用 $\min\limits_{i = 1}^n a_i$ 时最优)</p>
+<p>$\qquad$ 然后就直接跑最短路即可。</p>
+<p>$\qquad$ <del>据说，由于这种建边方式，$SPFA$ 不会被卡</del></p>
+<h1 id="Large-texttt-模板"><a href="#Large-texttt-模板" class="headerlink" title="$\Large\texttt{模板}$"></a>$\Large\texttt{模板}$</h1><p>$\qquad$ <a href="https://www.luogu.org/problem/P3403" target="_blank" rel="noopener">$luogu$ $P3403$ 跳楼机</a></p>
+<p>$\qquad$ 给定 $a, b, c, h$， 问在 $[0, h - 1]$ 范围内，有多少个 $k$ 满足 $ax + by + cz = k$ 存在非负整数解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tp &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>; ch = getchar()) f ^= ch == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; ch = getchar()) x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">    x = f ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Head[N], Cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, nxt, val;</span><br><span class="line">&#125;;</span><br><span class="line">Edge e[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    e[++Cnt] = (Edge) &#123;y, Head[x], k&#125;, Head[x] = Cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> val;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">std</span>::priority_queue &lt;Node&gt; Q;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (Node x, Node y) &#123;</span><br><span class="line">    <span class="keyword">return</span> x.val &gt; y.val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Dis[N];</span><br><span class="line"><span class="keyword">bool</span> Vis[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Dij</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(Dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(Dis));</span><br><span class="line">    Dis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    Q.push( (Node) &#123;<span class="number">1</span>, <span class="number">1</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span> (Q.size()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = Q.top().id; <span class="keyword">long</span> <span class="keyword">long</span> Val = Q.top().val; Q.pop();</span><br><span class="line">        <span class="keyword">if</span> (Vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">        Vis[u] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = Head[u]; i; i = e[i].nxt) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">            <span class="keyword">if</span> (Dis[v] &gt; Val + e[i].val) &#123;</span><br><span class="line">                Dis[v] = Val + e[i].val;</span><br><span class="line">                Q.push( (Node) &#123;v, Dis[v]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> n; <span class="keyword">int</span> x, y, z;</span><br><span class="line">    read(n), read(x), read(y), read(z);</span><br><span class="line">    <span class="keyword">if</span> (x &gt; y) <span class="built_in">std</span>::swap(x, y);</span><br><span class="line">    <span class="keyword">if</span> (x &gt; z) <span class="built_in">std</span>::swap(x, z);</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, n), <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; x; ++i) &#123;</span><br><span class="line">        Add_edge(i, (i + y) % x, y);</span><br><span class="line">        Add_edge(i, (i + z) % x, z);</span><br><span class="line">    &#125;</span><br><span class="line">    Dij();</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> Ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; x; ++i) <span class="keyword">if</span> (Dis[i] &lt;= n) Ans += <span class="built_in">std</span>::max((n - Dis[i]) / x + <span class="number">1</span>, <span class="number">0L</span>L);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/24/2014-2015-ACM-ICPC-Asia-Xian-Regional-Contest-F/" itemprop="url">
-            
-              <span itemprop="name">题解 2014-2015 ACM-ICPC, Asia Xian Regional Contest 【Color】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-24T08:06:03+08:00" content="2019-10-24">
-          10-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h1 id="Large-texttt-例题"><a href="#Large-texttt-例题" class="headerlink" title="$\Large\texttt{例题}$"></a>$\Large\texttt{例题}$</h1><ul>
+<li><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2118" target="_blank" rel="noopener">墨墨的等式</a></li>
+<li><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6071" target="_blank" rel="noopener">Lazy Running</a></li>
+<li><a href="https://www.luogu.org/problem/P2662" target="_blank" rel="noopener">牛场围栏</a></li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/23/XJOI-Contest1269/" itemprop="url">
-            
-              <span itemprop="name">XJ模拟赛18</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-23T18:08:54+08:00" content="2019-10-23">
-          10-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/22/solve-P1850/" itemprop="url">
-            
-              <span itemprop="name">题解 P1850 【换教室】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-22T15:17:33+08:00" content="2019-10-22">
-          10-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/21/一些有关Hexo博客的好东西/" itemprop="url">
-            
-              <span itemprop="name">一些有关Hexo博客的好东西</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-21T15:11:26+08:00" content="2019-10-21">
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/05/solve-loj510/" itemprop="url">
-            
-              <span itemprop="name">题解 「LibreOJ NOI Round 1」北校门外的回忆</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-05T11:27:52+08:00" content="2019-10-05">
-          10-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/03/solve-Comet-OJ-3940/" itemprop="url">
-            
-              <span itemprop="name">题解 Comet-OJ-3980 【字符串】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-03T21:10:17+08:00" content="2019-10-03">
-          10-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/29/Comet-OJ-Day2/" itemprop="url">
-            
-              <span itemprop="name">Comet OJ - 模拟赛测试 Day2</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-29T11:53:22+08:00" content="2019-09-29">
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/27/solve-Uoj171/" itemprop="url">
-            
-              <span itemprop="name">题解 【[WC2016]挑战NPC】</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-27T20:43:56+08:00" content="2019-09-27">
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/同余最短路/" rel="tag"><i class="fa fa-tag"></i> 同余最短路</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/25/XJOI-Contest1271/" rel="next" title="XJ模拟赛20">
+                <i class="fa fa-chevron-left"></i> XJ模拟赛20
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzE5Ny8yMzY5Nw=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -815,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -973,6 +780,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Problem"><span class="nav-number">1.</span> <span class="nav-text">$\Large\mathcal{Problem}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathcal-Solution"><span class="nav-number">2.</span> <span class="nav-text">$\Large\mathcal{Solution}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-texttt-实现"><span class="nav-number">3.</span> <span class="nav-text">$\Large\texttt{实现}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-texttt-模板"><span class="nav-number">4.</span> <span class="nav-text">$\Large\texttt{模板}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-texttt-例题"><span class="nav-number">5.</span> <span class="nav-text">$\Large\texttt{例题}$</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1101,6 +925,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1113,6 +941,20 @@
 
 
 
+  
+    <script>
+      window.livereOptions = {
+        refer: '2019/10/28/note-同余最短路/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
