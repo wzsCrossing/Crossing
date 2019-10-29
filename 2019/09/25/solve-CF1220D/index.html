@@ -522,7 +522,9 @@
 <p>让所有整数都为一张无向图中的顶点。$i, j$之间有边，当且仅当$\left| i - j\right|  \in B$。</p>
 <p>现在要从B中删去最少的元素，使得这张无向图变成二分图。</p>
 <h1 id="Large-mathcal-Solution"><a href="#Large-mathcal-Solution" class="headerlink" title="$\Large\mathcal{Solution}$"></a>$\Large\mathcal{Solution}$</h1><p>首先，根据二分图的性质可知，<strong>判断这张图是不是二分图，只需判断是否存在奇环</strong></p>
-<h2 id="我们先考虑只有两个数的情况"><a href="#我们先考虑只有两个数的情况" class="headerlink" title="我们先考虑只有两个数的情况"></a><strong>我们先考虑只有两个数的情况</strong></h2><p>则若存在奇环，当且仅当存在正整数$a,b$, 使得 $ax = by$ 且 $(a + b)  \bmod 2 = 1$。即<br>$$<br>\frac{\operatorname{lcm}(x, y)}{x} + \frac{\operatorname{lcm}(x, y)}{y} \equiv 1\pmod{2}<br>$$<br>于是就可以开始<del>快乐地</del>分类讨论了。</p>
+<h2 id="我们先考虑只有两个数的情况"><a href="#我们先考虑只有两个数的情况" class="headerlink" title="我们先考虑只有两个数的情况"></a><strong>我们先考虑只有两个数的情况</strong></h2><p>则若存在奇环，当且仅当存在正整数$a,b$, 使得 $ax = by$ 且 $(a + b)  \bmod 2 = 1$。即</p>
+<script type="math/tex; mode=display">
+\frac{\operatorname{lcm}(x, y)}{x} + \frac{\operatorname{lcm}(x, y)}{y} \equiv 1\pmod{2}</script><p>于是就可以开始<del>快乐地</del>分类讨论了。</p>
 <ul>
 <li>$x, y$ 都为奇数。那么 $\operatorname{lcm}(x, y)$ 肯定是奇数，所以不满足。</li>
 <li>$x, y$ 为一奇一偶。那么 $\operatorname{lcm}(x, y)$ 为偶数，所以满足。</li>
