@@ -96,28 +96,25 @@
 
 
 
-  <meta name="description" content="题目传送门  CCO原题传送门day1 T3   说实话，这道题是我随机跳到的。初看觉得不难，结果在码代码的时候遇到很多问题。最后，八WA之后终见AC。这一定是我太蒟了 题意我觉得本题题意也是一大难点，所以在看题目时要逐字，多看几遍。我在做的过程中，看错了两遍题目（前车之鉴），可能是本人的语文不好 本题的意思大概就是，在一个坐标系中，有n架飞机直线飞行（当然不是匀速），给定X坐标范围，又给定每架">
-<meta name="keywords" content="前缀和,二分查找">
+  <meta name="description" content="题目戳这里  题意记$sum$为一个多重集的所有元素的和 我们这样定义一个多重集是平衡的$:$ 对于$sum$的每一个数位，多重集中至少有一个元素与$sum$此数位相同 现在，给你一个a数组，有两种操作 1.修改a数组中一个位置的值 2.询问一个区间中所有不平衡多重集的sum的最小值 $\large\mathcal{Solution}$首先，容易得到的是，一个平衡的多重集中不存在两个及以上的元素">
+<meta name="keywords" content="线段树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解 P4803 【[CCO 2015]太阳能飞行】">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/solve-P4083/index.html">
+<meta property="og:title" content="CF1217E 【Sum Queries?】">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/CF1217E/index.html">
 <meta property="og:site_name" content="Crossing&#39;s blog">
-<meta property="og:description" content="题目传送门  CCO原题传送门day1 T3   说实话，这道题是我随机跳到的。初看觉得不难，结果在码代码的时候遇到很多问题。最后，八WA之后终见AC。这一定是我太蒟了 题意我觉得本题题意也是一大难点，所以在看题目时要逐字，多看几遍。我在做的过程中，看错了两遍题目（前车之鉴），可能是本人的语文不好 本题的意思大概就是，在一个坐标系中，有n架飞机直线飞行（当然不是匀速），给定X坐标范围，又给定每架">
+<meta property="og:description" content="题目戳这里  题意记$sum$为一个多重集的所有元素的和 我们这样定义一个多重集是平衡的$:$ 对于$sum$的每一个数位，多重集中至少有一个元素与$sum$此数位相同 现在，给你一个a数组，有两种操作 1.修改a数组中一个位置的值 2.询问一个区间中所有不平衡多重集的sum的最小值 $\large\mathcal{Solution}$首先，容易得到的是，一个平衡的多重集中不存在两个及以上的元素">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/03/13/AF6IqP.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/03/13/AF2YUf.png">
-<meta property="og:updated_time" content="2019-10-23T07:35:04.000Z">
+<meta property="og:updated_time" content="2019-10-29T06:39:36.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解 P4803 【[CCO 2015]太阳能飞行】">
-<meta name="twitter:description" content="题目传送门  CCO原题传送门day1 T3   说实话，这道题是我随机跳到的。初看觉得不难，结果在码代码的时候遇到很多问题。最后，八WA之后终见AC。这一定是我太蒟了 题意我觉得本题题意也是一大难点，所以在看题目时要逐字，多看几遍。我在做的过程中，看错了两遍题目（前车之鉴），可能是本人的语文不好 本题的意思大概就是，在一个坐标系中，有n架飞机直线飞行（当然不是匀速），给定X坐标范围，又给定每架">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/03/13/AF6IqP.png">
+<meta name="twitter:title" content="CF1217E 【Sum Queries?】">
+<meta name="twitter:description" content="题目戳这里  题意记$sum$为一个多重集的所有元素的和 我们这样定义一个多重集是平衡的$:$ 对于$sum$的每一个数位，多重集中至少有一个元素与$sum$此数位相同 现在，给你一个a数组，有两种操作 1.修改a数组中一个位置的值 2.询问一个区间中所有不平衡多重集的sum的最小值 $\large\mathcal{Solution}$首先，容易得到的是，一个平衡的多重集中不存在两个及以上的元素">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/06/solve-P4083/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/08/CF1217E/">
 
 
 
@@ -127,7 +124,7 @@
   };
 </script>
 
-  <title>题解 P4803 【[CCO 2015]太阳能飞行】 | Crossing's blog</title>
+  <title>CF1217E 【Sum Queries?】 | Crossing's blog</title>
   
 
 
@@ -403,7 +400,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/solve-P4083/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/CF1217E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crossing">
@@ -420,7 +417,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解 P4803 【[CCO 2015]太阳能飞行】
+          <h1 class="post-title" itemprop="name headline">CF1217E 【Sum Queries?】
 
               
             
@@ -446,7 +443,7 @@
                 
               
 
-              <time title="创建时间：2019-08-06 20:17:17" itemprop="dateCreated datePublished" datetime="2019-08-06T20:17:17+08:00">2019-08-06</time>
+              <time title="创建时间：2019-09-08 20:58:59" itemprop="dateCreated datePublished" datetime="2019-09-08T20:58:59+08:00">2019-09-08</time>
             
 
             
@@ -463,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-23 15:35:04" itemprop="dateModified" datetime="2019-10-23T15:35:04+08:00">2019-10-23</time>
+                <time title="修改时间：2019-10-29 14:39:36" itemprop="dateModified" datetime="2019-10-29T14:39:36+08:00">2019-10-29</time>
               
             
           </span>
@@ -487,7 +484,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/luogu/" itemprop="url" rel="index"><span itemprop="name">luogu</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
 
                 
                 
@@ -522,28 +519,22 @@
 
       
         <ul>
-<li><a href="https://www.luogu.org/problemnew/show/P4803" target="_blank" rel="noopener">题目传送门</a> </li>
-<li><a href="https://cemc.math.uwaterloo.ca/contests/computing/2015/stage%202/day1.pdf" target="_blank" rel="noopener">CCO原题传送门</a>day1 T3 </li>
+<li><a href="https://codeforces.com/contest/1217/problem/E" target="_blank" rel="noopener">题目戳这里</a></li>
 </ul>
-<p><em>说实话，这道题是我随机跳到的。初看觉得不难，结果在码代码的时候遇到很多问题。最后，八WA之后终见AC。<del>这一定是我太蒟了</del></em></p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a><strong>题意</strong></h1><p>我觉得本题题意也是一大难点，所以在看题目时要逐字，多看几遍。<del>我在做的过程中，看错了两遍题目（前车之鉴），可能是本人的语文不好</del></p>
-<p>本题的意思大概就是，在一个坐标系中，有n架飞机直线飞行（当然不是匀速），给定X坐标范围，又给定每架飞机的起始高度和终止高度。（其实就相当于n条一次函数的图象）。每架飞机还有一个干扰值，表示影响它正下方的飞机太阳吸收能力的强弱。现有Q个问题，请你求出区间[Si,Si+K]中，第Pi架飞机的太阳能板吸收的太阳光减少的值。我所说的难理解的地方就在这里。这里要求的并不是只要在该区间范围内能出现在第Pi架飞机上方的飞机。而是要求该区间中的每一时刻的减少的值中的最大值（可以这么理解）。</p>
-<h1 id="large-mathcal-Solution"><a href="#large-mathcal-Solution" class="headerlink" title="$\large\mathcal{Solution}$"></a>$\large\mathcal{Solution}$</h1><p><strong>刚开始真的无从下手，然后就看到。。。</strong><br><img src="https://s2.ax1x.com/2019/03/13/AF6IqP.png" alt></p>
-<p><strong>这才有点眉目。</strong></p>
-<p>对于n架飞机，我们可以预处理出每两架飞机航线（相当于一次函数）之间的关系（要么相交，要么不相交）。而只要两架飞机不在相交点上，就一定存在其中一架飞机对另外一家飞机有影响。也就是说，任何一架飞机对于一架它可以影响的飞机，影响的范围只可能是 [0,相交点),(相交点,X]（相交的情况）、[0,X]（不相交的情况）。</p>
-<p>知道了可影响范围的计算，于是一个奇妙的想法萌发，<strong>前缀和</strong>！因为<strong>对于一架飞机而言，它的被影响的值只有在经过一个交点后才会改变（因为飞机的相对位置就改变了）</strong>。因此，就可以记录下每个影响范围的起点和终点，利用<strong>区间加值</strong>的方法（这个，相信一般人都会吧）。这时候就可以利用前缀和，造一个前缀和数组，这样就可以得出每架飞机每一个时刻的被影响值。</p>
-<p>最后回答问题的时候，只要先利用二分找出起点，然后往后跳，直到终点，中途用一个变量记录最大值即可。（不清楚的请看代码注解）</p>
-<p><strong>这样，这道题就解决了。</strong></p>
-<h1 id="附"><a href="#附" class="headerlink" title="附:"></a><strong>附</strong>:</h1><ul>
-<li><p>这是本蒟蒻的第一篇题解，望支持。如有错误或有更优解，请告知。</p>
-</li>
-<li><p>CCO官网上有数据 <a href="https://cemc.math.uwaterloo.ca/contests/computing/2015/index.html" target="_blank" rel="noopener">传送门</a></p>
-</li>
-<li><p>这是一篇之前blog搬过来的文章，码风勿喷 <del>嘤嘤嘤</del></p>
-</li>
-</ul>
-<h1 id="large-mathcal-Code"><a href="#large-mathcal-Code" class="headerlink" title="$\large\mathcal{Code}$"></a>$\large\mathcal{Code}$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//本代码中的快读和快输均是之前尝试时加的，没有应该问题不大</span></span><br><span class="line"><span class="comment">//代码中有些地方可能写的有些复杂，可以多考虑考虑</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ff(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">xx</span>&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> val;</span><br><span class="line">&#125;a[<span class="number">2010</span>][<span class="number">2010</span>],f[<span class="number">2010</span>][<span class="number">2010</span>];                         <span class="comment">//f 前缀数组</span></span><br><span class="line"><span class="keyword">int</span> x,kk,n,Q,b[<span class="number">2010</span>],y[<span class="number">2010</span>],c[<span class="number">2010</span>],l[<span class="number">2010</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum[<span class="number">2010</span>];</span><br><span class="line"><span class="keyword">double</span> k[<span class="number">2010</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(xx s,xx t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.x&lt;t.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;    <span class="comment">//优化读入</span></span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span> </span>&#123;   <span class="comment">//优化输出</span></span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">9</span>) write(x/<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    x=read();kk=read();n=read();Q=read();</span><br><span class="line">    ff(i,<span class="number">1</span>,n) b[i]=read(),y[i]=read(),c[i]=read(),k[i]=<span class="number">1.0</span>*(y[i]-b[i])/x;     <span class="comment">// y[]、b[]对应一次函数y=kx+b中的k、b</span></span><br><span class="line">    ff(i,<span class="number">1</span>,n<span class="number">-1</span>)</span><br><span class="line">        ff(j,i+<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="keyword">int</span> ii=i,jj=j;</span><br><span class="line">            <span class="keyword">if</span>((b[ii]&gt;b[jj]&amp;&amp;y[ii]&lt;y[jj])||(b[ii]&lt;b[jj]&amp;&amp;y[ii]&gt;y[jj]))&#123;      <span class="comment">//相交的情况</span></span><br><span class="line">                <span class="keyword">if</span>(b[ii]&lt;b[jj]&amp;&amp;y[ii]&gt;y[jj]) swap(ii,jj);</span><br><span class="line">                <span class="keyword">double</span> dx=<span class="number">1.0</span>*(b[ii]-b[jj])/(k[jj]-k[ii]);       <span class="comment">//计算交点（基本操作）</span></span><br><span class="line">                a[jj][++l[jj]].val=-c[ii];a[jj][l[jj]].x=dx;sum[jj]+=c[ii]; <span class="comment">//区间加，并记录下交点，sum数组相当于x=0时的前缀数组的值</span></span><br><span class="line">                a[ii][++l[ii]].val=c[jj];a[ii][l[ii]].x=dx;                </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;                                                          <span class="comment">//不相交的情况</span></span><br><span class="line">                <span class="keyword">if</span>(b[ii]&gt;b[jj]) swap(ii,jj);</span><br><span class="line">                sum[ii]+=c[jj];                              <span class="comment">//同上     </span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ff(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">        sort(a[i]+<span class="number">1</span>,a[i]+l[i]+<span class="number">1</span>,cmp);          <span class="comment">//排序</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> cc=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ll=l[i];</span><br><span class="line">        l[i]=<span class="number">0</span>;</span><br><span class="line">        ff(j,<span class="number">1</span>,ll)&#123;</span><br><span class="line">            cc+=a[i][j].val;</span><br><span class="line">            <span class="keyword">if</span>(!(<span class="built_in">abs</span>(a[i][j].x-a[i][j+<span class="number">1</span>].x)&lt;=<span class="number">1e-7</span>)) f[i][++l[i]].x=a[i][j].x,f[i][l[i]].val=cc+f[i][l[i]<span class="number">-1</span>].val,cc=<span class="number">0</span>; <span class="comment">//造前缀数组，并去重</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ff(i,<span class="number">1</span>,Q)&#123;     </span><br><span class="line">        <span class="keyword">int</span> ll,rr;</span><br><span class="line">        x=read();ll=read();</span><br><span class="line">        <span class="keyword">int</span> l1=<span class="number">1</span>,r1=l[x],st=<span class="number">0</span>;</span><br><span class="line">        rr=ll+kk;</span><br><span class="line">        <span class="keyword">while</span>(l1&lt;=r1)&#123;           <span class="comment">//二分找起点</span></span><br><span class="line">            <span class="keyword">int</span> mid=(l1+r1+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(f[x][mid].x&lt;=ll) st=mid,l1=mid+<span class="number">1</span>; <span class="keyword">else</span> r1=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;           </span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(;st&lt;=l[x]&amp;&amp;f[x][st].x&lt;rr;st++) <span class="keyword">if</span>(f[x][st].val+sum[x]&gt;ans) ans=f[x][st].val+sum[x]; <span class="comment">//点往后跳，找最大值</span></span><br><span class="line">        write(ans);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.ax1x.com/2019/03/13/AF2YUf.png" alt><br>$\Huge{祝大家RP++！！！}$</p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a><strong>题意</strong></h1><p>记$sum$为一个多重集的所有元素的和</p>
+<p><strong>我们这样定义一个多重集是平衡的$:$</strong></p>
+<p>对于$sum$的每一个数位，多重集中至少有一个元素与$sum$此数位相同</p>
+<p><strong>现在，给你一个a数组，有两种操作</strong></p>
+<p>1.修改a数组中一个位置的值</p>
+<p>2.询问一个区间中所有<strong>不平衡多重集的sum的最小值</strong></p>
+<h1 id="large-mathcal-Solution"><a href="#large-mathcal-Solution" class="headerlink" title="$\large\mathcal{Solution}$"></a>$\large\mathcal{Solution}$</h1><p>首先，容易得到的是，一个平衡的多重集中不存在两个及以上的元素在某个数位都有值（大于0）。反过来， 一个不平衡的多重集中至少有一个数位上有两个及以上的元素有值。</p>
+<p><strong>如果没有修改</strong></p>
+<p>由不平衡多重集的这个性质可以得出，只考虑一个数位的话，<strong>sum的最小值为在该位上有值的最小的两个元素之和</strong>。</p>
+<p>考虑多个数位的话，那答案就是$min${每个数位的sum的最小值}</p>
+<p>知道了这点，做法就<del>很显然了</del>，我们可以对每一个数位建一颗线段树，维护在该位上有值的元素的最小值$Min$和次小值$Secmin$,那么答案就是$min${$Min_{i}+Secmin_{i}$}。</p>
+<p><strong>接下来，考虑带上修改</strong></p>
+<p>直接把$a_{x}$改成$y$不太容易操作，所以我们可以先把$a_{x}$变成$0$，再改成$y$。(两次单点修改)</p>
+<h1 id="large-mathcal-Code"><a href="#large-mathcal-Code" class="headerlink" title="$\large\mathcal{Code}$"></a>$\large\mathcal{Code}$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tp &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>; ch = getchar()) f ^= ch == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; ch = getchar()) x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">    x = f ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], b[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> Min, Secmin;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> Min(x) tre[x].Min</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> Secmin(x) tre[x].Secmin</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segment_Tree</span> &#123;</span></span><br><span class="line">    node tre[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        Min(p) = Secmin(p) = INT_MAX;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b[l]) Min(p) = a[l];</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        build(p &lt;&lt; <span class="number">1</span>, l, mid), build(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">        <span class="keyword">if</span> (Min(p &lt;&lt; <span class="number">1</span>) &lt; Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>)) &#123;</span><br><span class="line">            Min(p) = Min(p &lt;&lt; <span class="number">1</span>);</span><br><span class="line">            Secmin(p) = <span class="built_in">std</span>::min(Secmin(p &lt;&lt; <span class="number">1</span>), Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Min(p) = Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>);</span><br><span class="line">            Secmin(p) = <span class="built_in">std</span>::min(Secmin(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>), Min(p &lt;&lt; <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> k, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            Min(p) = Secmin(p) = INT_MAX;</span><br><span class="line">            <span class="keyword">if</span> (k) Min(p) = v;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= mid) change(p &lt;&lt; <span class="number">1</span>, l, mid, x, k, v);</span><br><span class="line">        <span class="keyword">if</span> (x &gt; mid) change(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, x, k, v);</span><br><span class="line">        <span class="keyword">if</span> (Min(p &lt;&lt; <span class="number">1</span>) &lt; Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>)) &#123;</span><br><span class="line">            Min(p) = Min(p &lt;&lt; <span class="number">1</span>);</span><br><span class="line">            Secmin(p) = <span class="built_in">std</span>::min(Secmin(p &lt;&lt; <span class="number">1</span>), Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Min(p) = Min(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>);</span><br><span class="line">            Secmin(p) = <span class="built_in">std</span>::min(Secmin(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>), Min(p &lt;&lt; <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> node <span class="title">Get_ans</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &gt;= x &amp;&amp; r &lt;= y) <span class="keyword">return</span> tre[p];</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (y &lt;= mid) <span class="keyword">return</span> Get_ans(p &lt;&lt; <span class="number">1</span>, l, mid, x, y);</span><br><span class="line">        <span class="keyword">if</span> (x &gt; mid) <span class="keyword">return</span> Get_ans(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, x, y);</span><br><span class="line">        node ans1 = Get_ans(p &lt;&lt; <span class="number">1</span>, l, mid, x, y), ans2 = Get_ans(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r, x, y), ans;</span><br><span class="line">        <span class="keyword">if</span> (ans1.Min &lt; ans2.Min) &#123;</span><br><span class="line">            ans.Min = ans1.Min;</span><br><span class="line">            ans.Secmin = <span class="built_in">std</span>::min(ans1.Secmin, ans2.Min);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ans.Min = ans2.Min;</span><br><span class="line">            ans.Secmin = <span class="built_in">std</span>::min(ans2.Secmin, ans1.Min);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Segment_Tree T[<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    read(n), read(m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) read(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, x = <span class="number">1</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) b[j] = (a[j] / x) % <span class="number">10</span>;</span><br><span class="line">        T[i].build(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">        x *= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> opt, x, y;</span><br><span class="line">        read(opt), read(x), read(y);</span><br><span class="line">        <span class="keyword">if</span> (opt == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) T[i].change(<span class="number">1</span>, <span class="number">1</span>, n, x, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">            a[x] = y;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">                T[i].change(<span class="number">1</span>, <span class="number">1</span>, n, x, y % <span class="number">10</span>, a[x]);</span><br><span class="line">                y /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = INT_MAX;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">                node t = T[i].Get_ans(<span class="number">1</span>, <span class="number">1</span>, n, x, y);</span><br><span class="line">                ans = <span class="built_in">std</span>::min(ans, (t.Secmin == INT_MAX ? INT_MAX : t.Min + t.Secmin));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans == INT_MAX ? <span class="number">-1</span> : ans);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -567,9 +558,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前缀和/" rel="tag"><i class="fa fa-tag"></i> 前缀和</a>
-          
-            <a href="/tags/二分查找/" rel="tag"><i class="fa fa-tag"></i> 二分查找</a>
+            <a href="/tags/线段树/" rel="tag"><i class="fa fa-tag"></i> 线段树</a>
           
         </div>
       
@@ -582,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/06/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2019/08/06/P4083/" rel="next" title="P4803 【[CCO 2015]太阳能飞行】">
+                <i class="fa fa-chevron-left"></i> P4803 【[CCO 2015]太阳能飞行】
               </a>
             
           </div>
@@ -592,8 +581,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/08/solve-CF1217E/" rel="prev" title="题解 CF1217E 【Sum Queries?】">
-                题解 CF1217E 【Sum Queries?】 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/25/CF1220D/" rel="prev" title="CF1220D 【Alex and Julian】">
+                CF1220D 【Alex and Julian】 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +660,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -704,7 +693,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -821,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#large-mathcal-Solution"><span class="nav-number">2.</span> <span class="nav-text">$\large\mathcal{Solution}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附"><span class="nav-number">3.</span> <span class="nav-text">附:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#large-mathcal-Code"><span class="nav-number">4.</span> <span class="nav-text">$\large\mathcal{Code}$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#large-mathcal-Solution"><span class="nav-number">2.</span> <span class="nav-text">$\large\mathcal{Solution}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#large-mathcal-Code"><span class="nav-number">3.</span> <span class="nav-text">$\large\mathcal{Code}$</span></a></li></ol></div>
             
 
           </div>
@@ -975,7 +966,7 @@
   
     <script>
       window.livereOptions = {
-        refer: '2019/08/06/solve-P4083/'
+        refer: '2019/09/08/CF1217E/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
