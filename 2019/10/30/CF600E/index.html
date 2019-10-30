@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="test $test = test$ test">
-<meta name="keywords" content="test">
+  <meta name="description" content="$\Large\mathscr{D}\mathcal{escription}$给定一颗 $n$ 节点的树，每个节点都有一种颜色。求每个子树中出现次数最多的颜色的编号和。 $\Large\mathscr{S}\mathcal{olution}$这里介绍两种方法。 法一 $:$ $Dsu$ $on$ $Tree$$\qquad$ 先放一下大佬的博客 $:$ $Dsu$ $on$ $Tree$ 入门 $">
+<meta name="keywords" content="线段树合并,Dsu on Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/test/index.html">
+<meta property="og:title" content="CF600E 【Lomsat gelral】">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/CF600E/index.html">
 <meta property="og:site_name" content="Crossing&#39;s blog">
-<meta property="og:description" content="test $test = test$ test">
+<meta property="og:description" content="$\Large\mathscr{D}\mathcal{escription}$给定一颗 $n$ 节点的树，每个节点都有一种颜色。求每个子树中出现次数最多的颜色的编号和。 $\Large\mathscr{S}\mathcal{olution}$这里介绍两种方法。 法一 $:$ $Dsu$ $on$ $Tree$$\qquad$ 先放一下大佬的博客 $:$ $Dsu$ $on$ $Tree$ 入门 $">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T07:42:18.000Z">
+<meta property="og:updated_time" content="2019-10-30T23:52:29.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="test $test = test$ test">
+<meta name="twitter:title" content="CF600E 【Lomsat gelral】">
+<meta name="twitter:description" content="$\Large\mathscr{D}\mathcal{escription}$给定一颗 $n$ 节点的树，每个节点都有一种颜色。求每个子树中出现次数最多的颜色的编号和。 $\Large\mathscr{S}\mathcal{olution}$这里介绍两种方法。 法一 $:$ $Dsu$ $on$ $Tree$$\qquad$ 先放一下大佬的博客 $:$ $Dsu$ $on$ $Tree$ 入门 $">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/06/test/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/30/CF600E/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>test | Crossing's blog</title>
+  <title>CF600E 【Lomsat gelral】 | Crossing's blog</title>
   
 
 
@@ -400,7 +400,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/CF600E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crossing">
@@ -417,7 +417,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test
+          <h1 class="post-title" itemprop="name headline">CF600E 【Lomsat gelral】
 
               
             
@@ -443,7 +443,7 @@
                 
               
 
-              <time title="创建时间：2019-08-06 19:44:16" itemprop="dateCreated datePublished" datetime="2019-08-06T19:44:16+08:00">2019-08-06</time>
+              <time title="创建时间：2019-10-30 20:47:30" itemprop="dateCreated datePublished" datetime="2019-10-30T20:47:30+08:00">2019-10-30</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-22 15:42:18" itemprop="dateModified" datetime="2019-10-22T15:42:18+08:00">2019-10-22</time>
+                <time title="修改时间：2019-10-31 07:52:29" itemprop="dateModified" datetime="2019-10-31T07:52:29+08:00">2019-10-31</time>
               
             
           </span>
@@ -477,7 +477,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
 
                 
                 
@@ -511,12 +518,28 @@
       
 
       
-        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><hr>
-<p>$test = test$</p>
-<p><em>test</em></p>
-<a id="more"></a>
-<p><strong>test</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"test"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Large-mathscr-D-mathcal-escription"><a href="#Large-mathscr-D-mathcal-escription" class="headerlink" title="$\Large\mathscr{D}\mathcal{escription}$"></a>$\Large\mathscr{D}\mathcal{escription}$</h1><p>给定一颗 $n$ 节点的树，每个节点都有一种颜色。求每个子树中出现次数最多的颜色的编号和。</p>
+<h1 id="Large-mathscr-S-mathcal-olution"><a href="#Large-mathscr-S-mathcal-olution" class="headerlink" title="$\Large\mathscr{S}\mathcal{olution}$"></a>$\Large\mathscr{S}\mathcal{olution}$</h1><p>这里介绍两种方法。</p>
+<h2 id="法一-Dsu-on-Tree"><a href="#法一-Dsu-on-Tree" class="headerlink" title="法一 $:$ $Dsu$ $on$ $Tree$"></a><strong>法一 $:$ $Dsu$ $on$ $Tree$</strong></h2><p>$\qquad$ 先放一下大佬的博客 $:$ <a href="https://www.cnblogs.com/zwfymqz/p/9683124.html" target="_blank" rel="noopener">$Dsu$ $on$ $Tree$ 入门</a></p>
+<p>$\qquad$ 模板题。</p>
+<p>$\qquad$ 直接走流程 $:$</p>
+<ul>
+<li>先剖出轻重链。</li>
+<li>$Dfs$ 遍历节点。</li>
+<li>先递归所有轻儿子，同时消除影响。</li>
+<li>再递归重儿子，不消除影响。</li>
+<li>统计所有轻儿子的贡献。并更新该节点答案。</li>
+<li>删去所有轻儿子的贡献。</li>
+</ul>
+<p>$\qquad$ 复杂度 $:$ $\mathcal{O}(n log_n)$</p>
+<p>$\qquad$ 简单证明 $:$ 每个点到根的路径上轻边个数不会超过 $log_n$ 条。所以每个点被作为轻边访问到的次数不会超过 $log_n$ 次。所以复杂度是 $\mathcal{O}(n log_n)$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dsu on Tree</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tp &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>; ch = getchar()) f ^= ch == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; ch = getchar()) x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">    x = f ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Head[N], Cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, nxt;</span><br><span class="line">&#125;;</span><br><span class="line">Edge e[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    e[++Cnt] = (Edge) &#123;y, Head[x]&#125;, Head[x] = Cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Col[N], Siz[N], Son[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Dfs1</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> last)</span> </span>&#123;</span><br><span class="line">    Siz[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = Head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">        <span class="keyword">if</span> (v == last) <span class="keyword">continue</span>;</span><br><span class="line">        Dfs1(v, x);</span><br><span class="line">        Siz[x] += Siz[v];</span><br><span class="line">        <span class="keyword">if</span> (Siz[v] &gt; Siz[Son[x]]) Son[x] = v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Max, Wson, Tot[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Sum, Ans[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> last, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    Tot[Col[x]] += k;</span><br><span class="line">    <span class="keyword">if</span> (Tot[Col[x]] &gt; Max) Max = Tot[Col[x]], Sum = Col[x];</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (Tot[Col[x]] == Max) Sum += Col[x];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = Head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">        <span class="keyword">if</span> (v == last || v == Wson) <span class="keyword">continue</span>;</span><br><span class="line">        Update(v, x, k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Dfs2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> last, <span class="keyword">int</span> opt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = Head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">        <span class="keyword">if</span> (v == last || v == Son[x]) <span class="keyword">continue</span>;</span><br><span class="line">        Dfs2(v, x, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (Son[x]) Dfs2(Son[x], x, <span class="number">1</span>), Wson = Son[x];</span><br><span class="line">    Update(x, last, <span class="number">1</span>);</span><br><span class="line">    Wson = <span class="number">0</span>;</span><br><span class="line">    Ans[x] = Sum;</span><br><span class="line">    <span class="keyword">if</span> (!opt) Update(x, last, <span class="number">-1</span>), Max = Sum = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) read(Col[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        read(x), read(y);</span><br><span class="line">        Add_edge(x, y), Add_edge(y, x);</span><br><span class="line">    &#125;</span><br><span class="line">    Dfs1(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    Dfs2(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">printf</span>(<span class="string">"%lld "</span>, Ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="法二-线段树合并"><a href="#法二-线段树合并" class="headerlink" title="法二 $:$ 线段树合并"></a><strong>法二 $:$ 线段树合并</strong></h2><p>$\qquad$ 对于每个节点开一颗动态开点的权值线段树。维护单种颜色出现最多的次数和出现次数最多的颜色的编号和。</p>
+<p>$\qquad$ 然后 $Dfs$ 就行了。递归到点 $u$ 时，把他的每一个儿子 $v$ 的线段树与自己合并起来。直接更新答案。</p>
+<p>$\qquad$ 复杂度 $:$ $\mathcal{O}(n log_n)$</p>
+<p>$\qquad$ 较 $Dsu$ $on$ $Tree$ 的缺点 $:$ 空间要开 $nlog_n$ </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 线段树合并</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tp&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tp &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>; ch = getchar()) f ^= ch == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">for</span> ( ; ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>; ch = getchar()) x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">    x = f ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Head[N], Cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, nxt;</span><br><span class="line">&#125;;</span><br><span class="line">Edge e[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    e[++Cnt] = (Edge) &#123;y, Head[x]&#125;, Head[x] = Cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Col[N], Root[N], n;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Ans[N];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> max, ls, rs;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> val;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> Max(x) Tre[x].max</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> Val(x) Tre[x].val</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> ls(x) Tre[x].ls</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> rs(x) Tre[x].rs</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segment_Tree</span> &#123;</span></span><br><span class="line">    Node Tre[N * <span class="number">20</span>];</span><br><span class="line">    <span class="keyword">int</span> Cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Pushup</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L = ls(p), R = rs(p);</span><br><span class="line">        <span class="keyword">if</span> (Max(L) &lt; Max(R)) <span class="built_in">std</span>::swap(L, R);</span><br><span class="line">        Max(p) = Max(L), Val(p) = Val(L);</span><br><span class="line">        <span class="keyword">if</span> (Max(L) == Max(R)) Val(p) += Val(R);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> &amp;p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!p) p = ++Cnt;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            Max(p) = <span class="number">1</span>;</span><br><span class="line">            Val(p) = k;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (k &lt;= mid) Build(ls(p), l, mid, k);</span><br><span class="line">        <span class="keyword">else</span> Build(rs(p), mid + <span class="number">1</span>, r, k);</span><br><span class="line">        Pushup(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!x || !y) <span class="keyword">return</span> x | y;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            Max(x) += Max(y);</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        ls(x) = Merge(ls(x), ls(y), l, mid);</span><br><span class="line">        rs(x) = Merge(rs(x), rs(y), mid + <span class="number">1</span>, r);</span><br><span class="line">        Pushup(x);</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Segment_Tree T;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> last)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = Head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">        <span class="keyword">if</span> (v == last) <span class="keyword">continue</span>;</span><br><span class="line">        Dfs(v, x);</span><br><span class="line">        Root[x] = T.Merge(Root[x], Root[v], <span class="number">1</span>, n);</span><br><span class="line">    &#125;</span><br><span class="line">    Ans[x] = T.Val(Root[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) read(Col[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        read(x), read(y);</span><br><span class="line">        Add_edge(x, y), Add_edge(y, x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) T.Build(Root[i], <span class="number">1</span>, n, Col[i]);</span><br><span class="line">    Dfs(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">printf</span>(<span class="string">"%lld "</span>, Ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -539,7 +562,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"><i class="fa fa-tag"></i> test</a>
+            <a href="/tags/线段树合并/" rel="tag"><i class="fa fa-tag"></i> 线段树合并</a>
+          
+            <a href="/tags/Dsu-on-Tree/" rel="tag"><i class="fa fa-tag"></i> Dsu on Tree</a>
           
         </div>
       
@@ -552,15 +577,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/10/29/P4834/" rel="next" title="P4834 【萨塔尼亚的期末考试】">
+                <i class="fa fa-chevron-left"></i> P4834 【萨塔尼亚的期末考试】
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/06/P4083/" rel="prev" title="P4803 【[CCO 2015]太阳能飞行】">
-                P4803 【[CCO 2015]太阳能飞行】 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -795,7 +820,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">1.</span> <span class="nav-text">test</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathscr-D-mathcal-escription"><span class="nav-number">1.</span> <span class="nav-text">$\Large\mathscr{D}\mathcal{escription}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Large-mathscr-S-mathcal-olution"><span class="nav-number">2.</span> <span class="nav-text">$\Large\mathscr{S}\mathcal{olution}$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#法一-Dsu-on-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">法一 $:$ $Dsu$ $on$ $Tree$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#法二-线段树合并"><span class="nav-number">2.2.</span> <span class="nav-text">法二 $:$ 线段树合并</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -949,7 +974,7 @@
   
     <script>
       window.livereOptions = {
-        refer: '2019/08/06/test/'
+        refer: '2019/10/30/CF600E/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
