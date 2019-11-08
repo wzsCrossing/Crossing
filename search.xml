@@ -5,7 +5,6 @@
     <url>/2019/11/04/%E5%85%AC%E5%91%8A/</url>
     <content><![CDATA[<h1 id="一些小-Bug"><a href="#一些小-Bug" class="headerlink" title="一些小 $Bug$"></a>一些小 $Bug$</h1><ul>
 <li>加密文章打开后公式渲染会失效，需要刷新才能 <del>有概率</del> 生效.</li>
-<li>评论功能暂时失效 <del>暂时不清楚原因</del></li>
 </ul>
 ]]></content>
   </entry>
@@ -262,8 +261,8 @@
         <category>Loj</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>倍增</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
